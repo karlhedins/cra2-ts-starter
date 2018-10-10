@@ -1,0 +1,21 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "defaultSeverity": "warning",
+  "rules": {
+    "member-access": false,
+    "no-submodule-imports": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "trailing-comma": false
+  },
+  // "interface-name": [true, "always-prefix"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js",
+      "src/serviceWorker.js"
+    ]
+  }
+}
