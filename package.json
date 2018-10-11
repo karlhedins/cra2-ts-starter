@@ -26,7 +26,8 @@
     "tslint-config-prettier": "1.15.0",
     "tslint-config-standard": "8.0.1",
     "tslint-react": "3.6.0",
-    "typescript": "3.1.2"
+    "typescript": "3.1.2",
+    "utility-types": "^2.1.0"
   },
   "husky": {
     "hooks": {
