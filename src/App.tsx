@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import HelloCC from './HelloCC';
+import HelloCC from './playground/HelloCC';
 
 const Container = styled.div`
   display: flex;
@@ -14,7 +14,6 @@ const Container = styled.div`
 
 class App extends Component {
   render() {
-    console.log('hej');
     return (
       <Container>
         <section>
