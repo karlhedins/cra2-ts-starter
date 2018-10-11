@@ -3,6 +3,8 @@ import { Subtract } from 'utility-types';
 
 const MISSING_ERROR = 'Error was swallowed during propagation.';
 
+import { ErrorMessage } from './ErrorMessage';
+
 interface InjectedProps {
   onReset: () => any;
 }
@@ -31,6 +33,7 @@ export const withErrorBoundary = <WrappedProps extends InjectedProps>(
 
     logErrorToCloud = (error: Error | null, info: object) => {
       // TODO: send error report to cloud
+      alert('error');
     };
 
     handleReset = () => {
@@ -56,3 +59,21 @@ export const withErrorBoundary = <WrappedProps extends InjectedProps>(
     }
   };
 };
+
+const ErrorMessageWithErrorBoundary = withErrorBoundary(ErrorMessage);
+const BrokenButton = () => (
+  <button
+    type="button"
+    onClick={() => {
+      throw new Error(`Catch me!`);
+    }}
+  >
+    {`Throw nasty error`}
+  </button>
+);
+
+export const BrokenButtonWithBoundary = () => (
+  <ErrorMessageWithErrorBoundary>
+    <BrokenButton />
+  </ErrorMessageWithErrorBoundary>
+);

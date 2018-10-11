@@ -12,3 +12,24 @@ export class GenericList<T> extends React.Component<IGenericListProps<T>, {}> {
     return <div>{items.map(itemRenderer)}</div>;
   }
 }
+
+interface IUser {
+  fullName: string;
+  id: string;
+}
+
+// For testing
+const users = [
+  { fullName: 'Alice', id: 'a' },
+  { fullName: 'Bob', id: 'b' },
+  { fullName: 'Charlie', id: 'c' },
+];
+
+export class UserList extends GenericList<IUser> {}
+
+export const TestGenericList = () => (
+  <UserList
+    items={users}
+    itemRenderer={item => <div key={item.id}>{item.fullName}</div>}
+  />
+);

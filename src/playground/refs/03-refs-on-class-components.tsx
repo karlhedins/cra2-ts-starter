@@ -13,9 +13,9 @@ export class AutoFocusTextInput extends Component {
 }
 
 class MyComponent extends Component {
-  private myRef = React.createRef<HTMLDivElement>();
+  private myRef = React.createRef<HTMLInputElement>();
   render() {
-    return <div ref={this.myRef} />;
+    return <input ref={this.myRef} />;
   }
 
   focus() {
